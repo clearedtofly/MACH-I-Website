@@ -36,7 +36,7 @@
     {
       category: 'Services Page',
       items: [
-        'MedXPress link added to AME exam section — patients can click to complete their application online before the appointment.',
+        'MedXPress callout box added to AME exam section — prominent blue box with button linking to medxpress.faa.gov, so patients know to complete it before their appointment.',
         'Page HTML reformatted from compressed one-liners to properly indented code — makes future edits safe and easy.',
       ]
     },
