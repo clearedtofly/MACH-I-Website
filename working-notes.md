@@ -178,3 +178,44 @@ The Mac Studio setup plan (Sessions 1-3) remains valid and is tracked in `setup/
 **Notes:** Meeting is via FaceTime, not in-person. Eddie installs Tailscale, Scott SSHs in and does everything else. OpenClaw uses OpenAI (gpt-4o), not Anthropic. Gmail bridge hook and Netlify webhook hook are skeleton/TODO — need testing. No PHI in email/calendar — Patient Gain handles HIPAA file transfers.
 
 --- Checkpoint saved before context clear ---
+
+---
+
+## Checkpoint — 2026-03-10
+
+**Branch:** main (pushed to GitHub)
+**Session:** Dr. D and Scott — live setup session on Eddie's Mac Studio (Scott remoted in via Tailscale)
+
+### What Was Done
+- **Google Workspace email activated** — drd@mach1cardiology.com created and live
+- **Gmail activated** on mach1cardiology.com domain, DKIM enabled
+- **Netlify CLI installed** on Mac Studio (via Homebrew)
+- **Site deployed** to Dr. D's Netlify account (team: MACH I) — mach1cardiology.com
+- **Custom domain connected** — mach1cardiology.com set as primary domain
+- **Netlify DNS activated** — nameservers updated in Squarespace to Netlify's ns1-4.p04.nsone.net
+- **Google MX records added** to Netlify DNS zone (all 5 priority records + SPF TXT)
+- **SSL certificate provisioned** — DNS verification passed, Let's Encrypt cert issued
+- **Clean URL redirects added** to netlify.toml (no .html extension needed for any page)
+- **Netlify Forms enabled** — contact and intake forms detected
+- **Form email notifications configured:**
+  - drd@mach1cardiology.com (primary — pending MX propagation)
+  - medicalaerospacecardiology@gmail.com (backup — confirmed working)
+- **End-to-end test passed** — form submission received in Gmail
+
+### Current State
+- Site: https://mach1cardiology.com — LIVE ✅
+- Email: drd@mach1cardiology.com — provisioned, MX propagating (may take up to 1 hour)
+- Forms: working, notifications going to Gmail backup
+- Netlify site name: mach-i-cardiology-website
+
+### Next Steps
+- [ ] Verify drd@mach1cardiology.com receives email once MX propagates (check in ~1 hour)
+- [ ] Remove Gmail backup notification once primary email is confirmed working
+- [ ] Set up GitHub account for Dr. D (version control for website edits)
+- [ ] Wire up auto-deploy from GitHub → Netlify (so git push auto-deploys)
+- [ ] OpenClaw setup (deferred — next session)
+- [ ] Patient Gain account (deferred)
+- [ ] Redirect medicalaerospacecardiology.com → mach1cardiology.com
+
+### Netlify DNS Zone ID
+`69af9f80844e4495959b199e` (mach1cardiology.com zone in Netlify DNS)
