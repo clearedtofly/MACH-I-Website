@@ -244,9 +244,49 @@ The Mac Studio setup plan (Sessions 1-3) remains valid and is tracked in `setup/
 - QR code generated: img/mach1cardiology-qr.png (1000x1000, for presentations)
 
 **Next step:** Commit QR code to repo, then start next session backlog (dev server, GitHub transfer, auto-deploy)
-**Blockers:** 
+**Blockers:**
 - MX records for drd@mach1cardiology.com still propagating (check in Gmail — may be live by now)
 - medicalaerospacecardiology.com redirect pending Wix DNS propagation (~1 hour)
 **Notes:** Dr. D is on his Mac Studio. Scott remoted in via Tailscale. Netlify CLI installed and authenticated on Mac Studio. Git committer currently shows Eddie's name — needs git config set up next session.
+
+## Checkpoint — 2026-03-10 17:58:26
+
+**Branch:** main
+**Uncommitted changes:** ?? "img/High res headshot.jpg", ?? prep/studio-setup.sh
+**Session work:**
+- Live meeting with Eddie — set up his Mac Studio remotely via Tailscale + SSH
+- Installed Homebrew, Node.js, Git, Claude Code on Mac Studio (edave user account)
+- Created GitHub account for Eddie: username clearedtofly, email DrD@mach1cardiology.com
+- Added Eddie as collaborator on MACH-I-Website repo (push access)
+- Pushed agents framework to new private repo txcfi-scott/claude-agents, added Eddie as collaborator
+- Created and pushed CLAUDE.md to website repo for Claude Code project context
+- Cloned both repos on Studio: ~/Projects/mach-i-website and ~/Claude/agents
+- Installed slash commands (pepper, bootstrap, checkpoint, mailbox) to ~/.claude/commands/ on Studio
+- Created studio-bootstrap.sh — single master setup script for future runs
+- Saved all Eddie's credentials to ~/Claude/agents/memory/services.md (Google Workspace, Squarespace, Wix, GitHub, Mac Studio)
+- Initiated repo transfer of MACH-I-Website to clearedtofly (pending acceptance)
+- Composed Pat Brown / Mad Props Aero intro email for Dr. D special issuance segment
+- Two macOS user accounts on Studio: edave (primary, Eddie uses daily) and eddiedavenport (admin, initial setup). All work moved to edave.
+- Homebrew ownership fixed for edave user
+
+**Next step:**
+- Eddie needs to accept GitHub repo transfer notification
+- Run studio-bootstrap.sh on Studio to finalize (pmset sleep disable, SSH keys, git identity)
+- Eddie needs to sign up for Claude Pro ($20/mo) or use free tier
+- Send Pat Brown intro email
+- Look through Eddie's Wix account to evaluate what he's paying for vs using
+- Eddie available Mon-Thu 9pm for evening sessions; out of country Mar 15-28
+
+**Blockers:**
+- Repo transfer to clearedtofly pending (may need to retry from GitHub web UI)
+- Still need Eddie's domain registrar access (Squarespace) for DNS changes
+- Need to evaluate Wix vs current stack
+
+**Notes:**
+- Tailscale IP for Mac Studio: 100.88.145.73
+- Mac Studio password: EDpdad12! (both accounts)
+- edave is the primary user account, eddiedavenport was initial setup
+- Tech stack info is out of date per Scott — skip Docker/OpenClaw for now, revisit later
+- Studio has two user accounts causing Homebrew permission issues — fixed with sudo chown
 
 --- Checkpoint saved before context clear ---
