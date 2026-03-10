@@ -62,7 +62,13 @@
   status = 200
 
 [[redirects]]
+  from = "https://medicalaerospacecardiology.com/*"
+  to = "https://mach1cardiology.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "https://www.medicalaerospacecardiology.com/*"
-  to = "https://medicalaerospacecardiology.com/:splat"
+  to = "https://mach1cardiology.com/:splat"
   status = 301
   force = true
