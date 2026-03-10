@@ -210,6 +210,7 @@ The Mac Studio setup plan (Sessions 1-3) remains valid and is tracked in `setup/
 
 ### Backlog — Next Session
 **Quick (do first):**
+- [ ] Set up local dev server for testing before pushing to live (e.g. `netlify dev` — serves site locally with forms + redirects working, so changes can be previewed before deploy)
 - [ ] Verify drd@mach1cardiology.com receives email once MX propagates (~1 hour after session)
 - [ ] Remove medicalaerospacecardiology@gmail.com backup notification once primary email confirmed
 - [ ] Transfer repo from txcfi-scott/MACH-I-Website → Dr. D's GitHub account (he has one); Scott stays as collaborator; update git remote on Mac Studio
