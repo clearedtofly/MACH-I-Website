@@ -3216,3 +3216,78 @@ li {
     page-break-inside: avoid;
   }
 }
+
+/* ============================================================
+   AFFILIATIONS BAR
+   ============================================================ */
+
+.affiliations-bar {
+  background: var(--color-white);
+  padding: var(--space-8) 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.affiliations-label {
+  text-align: center;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-5);
+}
+
+.affiliations-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+}
+
+.affil-logo {
+  height: 44px;
+  width: auto;
+  opacity: 0.72;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .affiliations-logos {
+    gap: var(--space-5);
+  }
+  .affil-logo {
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .affil-logo {
+    height: 30px;
+  }
+}
+
+/* ============================================================
+   DR. DAVENPORT PORTRAIT
+   ============================================================ */
+
+.dr-portrait-wrap {
+  flex-shrink: 0;
+  width: 280px;
+}
+
+.dr-portrait {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 3px solid var(--color-gold, #C5A44E);
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .dr-portrait-wrap {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
