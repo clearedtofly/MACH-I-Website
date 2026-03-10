@@ -208,14 +208,21 @@ The Mac Studio setup plan (Sessions 1-3) remains valid and is tracked in `setup/
 - Forms: working, notifications going to Gmail backup
 - Netlify site name: mach-i-cardiology-website
 
-### Next Steps
-- [ ] Verify drd@mach1cardiology.com receives email once MX propagates (check in ~1 hour)
-- [ ] Remove Gmail backup notification once primary email is confirmed working
-- [ ] Set up GitHub account for Dr. D (version control for website edits)
-- [ ] Wire up auto-deploy from GitHub → Netlify (so git push auto-deploys)
-- [ ] OpenClaw setup (deferred — next session)
-- [ ] Patient Gain account (deferred)
-- [ ] Redirect medicalaerospacecardiology.com → mach1cardiology.com
+### Backlog — Next Session
+**Quick (do first):**
+- [ ] Verify drd@mach1cardiology.com receives email once MX propagates (~1 hour after session)
+- [ ] Remove medicalaerospacecardiology@gmail.com backup notification once primary email confirmed
+- [ ] Transfer repo from txcfi-scott/MACH-I-Website → Dr. D's GitHub account (he has one); Scott stays as collaborator; update git remote on Mac Studio
+- [ ] Wire up auto-deploy: GitHub → Netlify (so `git push` auto-deploys the site)
+- [ ] Set git config on Mac Studio (name + email for commits)
+- [ ] Redirect medicalaerospacecardiology.com → mach1cardiology.com (via Wix domain redirect)
+
+**Next session:**
+- [ ] OpenClaw setup — install Docker Desktop, deploy Mach 1 Front Desk agent, configure skills
+- [ ] Patient Gain account — create together, wire up to OpenClaw secure upload trigger
+- [ ] OpenAI account + API key (for OpenClaw AI backend)
+- [ ] Claude Code training — show Dr. D how to edit the site himself
+- [ ] GitHub account for Dr. D — confirm username, add as repo owner
 
 ### Netlify DNS Zone ID
 `69af9f80844e4495959b199e` (mach1cardiology.com zone in Netlify DNS)
