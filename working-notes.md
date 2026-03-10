@@ -227,3 +227,26 @@ The Mac Studio setup plan (Sessions 1-3) remains valid and is tracked in `setup/
 
 ### Netlify DNS Zone ID
 `69af9f80844e4495959b199e` (mach1cardiology.com zone in Netlify DNS)
+
+## Checkpoint — 2026-03-10 01:45:00
+
+**Branch:** main
+**Uncommitted changes:** None (all pushed)
+**Session work:**
+- Deployed site to Dr. D's Netlify account (mach-i-cardiology-website)
+- Connected mach1cardiology.com as primary domain with Netlify DNS
+- Added Google Workspace MX + SPF records to Netlify DNS zone
+- SSL cert provisioned and live
+- Clean URL redirects added (no .html needed)
+- Netlify Forms enabled, email notifications to drd@mach1cardiology.com + medicalaerospacecardiology@gmail.com (backup)
+- Forms tested end-to-end — working
+- medicalaerospacecardiology.com added as domain alias, redirects to mach1cardiology.com
+- QR code generated: img/mach1cardiology-qr.png (1000x1000, for presentations)
+
+**Next step:** Commit QR code to repo, then start next session backlog (dev server, GitHub transfer, auto-deploy)
+**Blockers:** 
+- MX records for drd@mach1cardiology.com still propagating (check in Gmail — may be live by now)
+- medicalaerospacecardiology.com redirect pending Wix DNS propagation (~1 hour)
+**Notes:** Dr. D is on his Mac Studio. Scott remoted in via Tailscale. Netlify CLI installed and authenticated on Mac Studio. Git committer currently shows Eddie's name — needs git config set up next session.
+
+--- Checkpoint saved before context clear ---
