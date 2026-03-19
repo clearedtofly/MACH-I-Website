@@ -36,7 +36,7 @@
       '<div class="logo-banner">' +
         '<div class="container">' +
           '<a href="index.html" aria-label="MACH I Home">' +
-            '<img src="img/mach-i-logo.png" alt="MACH I — Medical Aerospace Cardiology &amp; Human Performance Institute" class="logo-banner-img">' +
+            '<img src="img/mach-i-logo.png" alt="MACH I Cardiology — Aviation Cardiologist for Pilots, FAA Special Issuance &amp; AME Exams in Dayton, Ohio" class="logo-banner-img">' +
           '</a>' +
         '</div>' +
       '</div>' +
@@ -75,7 +75,7 @@
         '<div class="footer-grid">' +
 
           '<div class="footer-brand">' +
-            '<a href="index.html" class="footer-logo-link"><img src="img/mach-i-logo-med.png" alt="MACH I" class="footer-logo-img" width="160" height="78"></a>' +
+            '<a href="index.html" class="footer-logo-link"><img src="img/mach-i-logo-med.png" alt="MACH I Cardiology — FAA Aviation Cardiology &amp; Special Issuance Specialists" class="footer-logo-img" width="160" height="78"></a>' +
             '<p class="footer-tagline">Medical Aerospace Cardiology &amp; Human Performance Institute</p>' +
             '<address class="footer-address">' +
               '7061 Corporate Way, Suite 109<br>' +
@@ -98,10 +98,22 @@
           '<div class="footer-services">' +
             '<h4>Services</h4>' +
             '<ul>' +
-              '<li><a href="services.html#aviation">AME Exam</a></li>' +
-              '<li><a href="services.html#cardiology">Cardiology</a></li>' +
-              '<li><a href="special-issuance.html">Special Issuance</a></li>' +
-              '<li><a href="services.html#performance">Executive Health</a></li>' +
+              '<li><a href="services.html#aviation">FAA AME Flight Exam</a></li>' +
+              '<li><a href="services.html#cardiology">Aviation Cardiology</a></li>' +
+              '<li><a href="special-issuance.html">FAA Special Issuance</a></li>' +
+              '<li><a href="services.html#performance">Executive Heart Screening</a></li>' +
+            '</ul>' +
+          '</div>' +
+
+          '<div class="footer-conditions">' +
+            '<h4>Conditions</h4>' +
+            '<ul>' +
+              '<li><a href="special-issuance.html#conditions">Heart Attack &amp; CAD</a></li>' +
+              '<li><a href="special-issuance.html#conditions">Coronary Stent</a></li>' +
+              '<li><a href="special-issuance.html#conditions">Bypass Surgery</a></li>' +
+              '<li><a href="special-issuance.html#conditions">AFib &amp; Arrhythmias</a></li>' +
+              '<li><a href="special-issuance.html#conditions">Valve Replacement</a></li>' +
+              '<li><a href="special-issuance.html#conditions">Pacemaker</a></li>' +
             '</ul>' +
           '</div>' +
 

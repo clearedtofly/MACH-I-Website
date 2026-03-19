@@ -1,3 +1,23 @@
+## Checkpoint — 2026-03-19 (Domain fix)
+
+**Branch:** main
+**Issue:** mach1cardiology.com was serving old content while mach-i-cardiology.netlify.app had the new content.
+**Root cause:** Two separate Netlify sites exist:
+1. `mach-i-cardiology` on TXCFI team account (Scott's) — deploys from `txcfi-scott/MACH-I-Website` — has NO custom domain
+2. `mach-i-cardiology-website` (or similar) on Dr. D's Netlify account — deploys from `clearedtofly/MACH-I-Website` — owns `mach1cardiology.com` domain + Netlify DNS
+Dr. D's repo was stale (last push Mar 10), while Scott's repo had newer commits. The domain pointed to Dr. D's site with old content.
+**Fix:** Force-pushed Scott's repo (latest code) to Dr. D's repo (`clearedtofly/MACH-I-Website`), triggering a redeploy on the site that owns the domain. Verified mach1cardiology.com now serves the new content with correct canonical URLs and working redirects.
+**Also deployed:** to TXCFI Netlify site (`mach-i-cardiology.netlify.app`) to keep both in sync.
+
+**Architectural note:** There is a dual-site problem that should be resolved long-term:
+- Either transfer the domain to the TXCFI site and delete Dr. D's site, or
+- Consolidate to a single repo and single Netlify site
+- For now, both repos need to be kept in sync when deploying changes
+
+**Next step:** Consider consolidating to a single Netlify site + single repo to avoid this happening again.
+
+---
+
 ## Checkpoint — 2026-03-03 (Logo integration)
 
 **Branch:** main
