@@ -1,3 +1,16 @@
+// Google Analytics 4
+(function() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-9E6CKN660Z';
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9E6CKN660Z');
+})();
+
 /**
  * MACH I Website — Main JavaScript
  * Shared header/footer injection, mobile menu, sticky header, smooth scroll,
