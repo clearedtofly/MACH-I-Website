@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /intake.html
 Disallow: /thank-you.html
+Disallow: /dr-d-review.html
 
-Sitemap: https://medicalaerospacecardiology.com/sitemap.xml
+Sitemap: https://mach1cardiology.com/sitemap.xml
