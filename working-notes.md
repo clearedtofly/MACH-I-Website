@@ -23,15 +23,24 @@
 - **dr-d-review.html blocked** in robots.txt
 
 ### Still Outstanding
-- **Google Business Profile:** Eddie needs to enter postcard verification code when it arrives (after Mar 28)
+- **Google Business Profile:** Eddie needs to enter postcard verification code when it arrives at office (after Mar 28)
 - **Old domain in Search Console:** medicalaerospacecardiology.com needs TXT verification via Wix DNS — requires Eddie's phone for Wix 2FA. Then use Change of Address tool.
-- **DKIM activation:** Click "Start authentication" in Google Admin (Apps > Gmail > Authenticate email) — may have been done by Scott this session
-- **Request indexing:** Quota hit today. Return tomorrow to request indexing for remaining pages.
-- **Bing Webmaster Tools:** Submit site at bing.com/webmasters
-- **Directory listings:** Update Doximity, WebMD, Healthgrades, US News, Vitals with new URL (mach1cardiology.com)
+- **DKIM activation:** Eddie needs to click "Start authentication" in Google Admin (Apps > Gmail > Authenticate email)
+- **Request indexing:** Quota hit today. Return tomorrow to request indexing for remaining pages in Google Search Console.
+- **Bing Webmaster Tools:** Set up and sitemap submitted ✅
+- **Directory listings:** Need Eddie's DOB, medical license #, and NPI confirmation to update Healthgrades and Vitals. Check if he has a Doximity account. Updating Doximity auto-updates U.S. News.
 - **DMARC tightening:** Once DKIM is confirmed working, change DMARC from p=none to p=quarantine
 - **GitHub repo consolidation:** Once clearedtofly accepts repo transfer, consolidate to single repo/site
+- **Google reviews:** Set up direct review link once Business Profile is verified
 - **Content strategy:** Blog posts targeting pilot search queries (future initiative)
+- **Email sent to Eddie:** Summary of work done and action items (2026-03-19)
+
+### Additional Items Completed Late in Session
+- **Bing Webmaster Tools:** Site imported from Google Search Console, sitemap submitted
+- **IndexNow:** Set up and all 6 pages submitted to Bing/Yandex (key: 340b389484807c06242a8461b02bbab5)
+- **Custom 404 page:** Branded page with helpful navigation for broken links
+- **Google Business Profile created:** Business name, address, phone, hours, description all set. Pending postcard verification.
+- **Directory listing research:** Doximity, WebMD claimable online. Healthgrades, Vitals need Eddie's DOB/license/NPI.
 
 ---
 
