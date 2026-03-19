@@ -1,3 +1,75 @@
+## Checkpoint: SEO Overhaul & Search Visibility Fix (2026-03-19)
+
+### What Was Done
+- **Root cause found:** All canonical URLs, og:url, JSON-LD, sitemap.xml, robots.txt still referenced old domain (medicalaerospacecardiology.com). Google had ZERO pages indexed for mach1cardiology.com.
+- **Domain references fixed:** Updated all canonical URLs, og:url, JSON-LD schema across all 6 public HTML files to mach1cardiology.com
+- **Old Wix path redirects added:** /home, /about-1, /plans-pricing, /copy-of-home, /service-page/* all 301 redirect to correct new pages in netlify.toml
+- **Fixed /home bug:** Was serving 200 instead of redirecting (removed from _redirects file)
+- **Google Analytics 4 installed:** Measurement ID G-9E6CKN660Z, injected via main.js, CSP headers updated
+- **Google Search Console set up:** mach1cardiology.com verified, sitemap submitted
+- **Google Business Profile created:** Pending postcard verification at office address
+- **Comprehensive SEO overhaul (693cde2):**
+  - Enhanced JSON-LD schemas: MedicalClinic (with services/geo/hours), Physician, FAQPage (11 Qs), MedicalWebPage (11 conditions), Service with pricing, BreadcrumbList on all pages
+  - Geo meta tags, Twitter Cards, author, robots directives, og:locale on all pages
+  - Keyword-optimized title tags and meta descriptions (condition-specific, pricing in services title)
+  - New content sections: "Who We Help", "Find Your Condition" (index), "Aviation Cardiology Expertise" (about), "BasicMed vs Special Issuance" (special-issuance), expanded travel info (contact)
+  - 3 new FAQ items: "Can I fly after a heart attack?", "aviation cardiologist near me", "FAA denial appeal"
+  - Footer: keyword-rich link text + new Conditions column on every page
+  - Image alt text optimization, internal cross-linking improvements
+  - Sitemap: clean URLs, changefreq tags
+- **Email authentication complete:** SPF + DKIM + DMARC all configured and verified
+- **Dual-repo issue found & fixed:** mach1cardiology.com serves from clearedtofly/MACH-I-Website (Eddie's repo), not txcfi-scott. Must push to both remotes. clearedtofly remote added.
+- **Eddie's Netlify API token saved:** macOS Keychain (netlify.eddie / drd@mach1cardiology.com)
+- **dr-d-review.html blocked** in robots.txt
+
+### Still Outstanding
+- **Google Business Profile:** Eddie needs to enter postcard verification code when it arrives (after Mar 28)
+- **Old domain in Search Console:** medicalaerospacecardiology.com needs TXT verification via Wix DNS — requires Eddie's phone for Wix 2FA. Then use Change of Address tool.
+- **DKIM activation:** Click "Start authentication" in Google Admin (Apps > Gmail > Authenticate email) — may have been done by Scott this session
+- **Request indexing:** Quota hit today. Return tomorrow to request indexing for remaining pages.
+- **Bing Webmaster Tools:** Submit site at bing.com/webmasters
+- **Directory listings:** Update Doximity, WebMD, Healthgrades, US News, Vitals with new URL (mach1cardiology.com)
+- **DMARC tightening:** Once DKIM is confirmed working, change DMARC from p=none to p=quarantine
+- **GitHub repo consolidation:** Once clearedtofly accepts repo transfer, consolidate to single repo/site
+- **Content strategy:** Blog posts targeting pilot search queries (future initiative)
+
+---
+
+## Checkpoint — 2026-03-19 (DMARC + DKIM setup)
+
+**What was done:**
+- Added DMARC TXT record to Netlify DNS via Eddie's Netlify API:
+  - `_dmarc.mach1cardiology.com` -> `v=DMARC1; p=none; rua=mailto:DrD@mach1cardiology.com; pct=100; adkim=r; aspf=r`
+  - Policy is `p=none` (monitor only) -- safe to start, tighten to `p=quarantine` or `p=reject` once DKIM is confirmed working
+- Retrieved and saved Eddie's Netlify API token to macOS Keychain (`netlify.eddie` / `drd@mach1cardiology.com`)
+- Updated services.md with Eddie's Netlify account details
+- Verified all email DNS records: SPF, MX, DMARC all live and correct
+
+**DKIM -- still needs Eddie's action:**
+DKIM requires a key generated in Google Admin Console. Eddie (or Scott in a session with Eddie) needs to:
+1. Go to https://admin.google.com
+2. Sign in as DrD@mach1cardiology.com
+3. Navigate: Apps > Google Workspace > Gmail > Authenticate email
+4. Click "Generate new record" (selector prefix: `google`, key length: 2048-bit)
+5. Copy the TXT record value (starts with `v=DKIM1; k=rsa; p=...`)
+6. Add it as a DNS record. The command to add via API:
+   ```bash
+   EDDIE_TOKEN=$(security find-generic-password -s "netlify.eddie" -a "drd@mach1cardiology.com" -w)
+   curl -X POST -H "Authorization: Bearer $EDDIE_TOKEN" -H "Content-Type: application/json" \
+     -d '{"type":"TXT","hostname":"google._domainkey.mach1cardiology.com","value":"THE_DKIM_KEY_HERE","ttl":3600}' \
+     "https://api.netlify.com/api/v1/dns_zones/69af9f80844e4495959b199e/dns_records"
+   ```
+7. Back in Google Admin, click "Start authentication"
+8. Wait ~48h, then tighten DMARC to `p=quarantine`
+
+**Current email DNS status:**
+- SPF: `v=spf1 include:_spf.google.com ~all` -- LIVE
+- MX: All 5 Google Workspace records -- LIVE
+- DMARC: `v=DMARC1; p=none; ...` -- LIVE (just added)
+- DKIM: NOT YET CONFIGURED (needs Google Admin Console)
+
+---
+
 ## Checkpoint — 2026-03-19 (Domain fix)
 
 **Branch:** main
